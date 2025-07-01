@@ -1,8 +1,8 @@
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
-cp user.repo /etc/yum.repos.d/mongo.repo
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp user.repo /etc/systemd/system/user.service
+
 useradd roboshop
 mkdir /app
 curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
