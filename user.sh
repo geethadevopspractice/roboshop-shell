@@ -6,8 +6,10 @@ cp user.service /etc/systemd/system/user.service
 useradd roboshop
 mkdir /app
 curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
+# shellcheck disable=SC2164
 cd /app
 unzip /tmp/user.zip
+# shellcheck disable=SC2164
 cd /app
 npm install
 
