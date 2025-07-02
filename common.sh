@@ -37,3 +37,16 @@ PYTHON() {
 
   SYSTEMD
 }
+
+MAVEN() {
+  dnf install maven -y
+  cp shipping.service /etc/systemd/system/shipping.service
+
+  APP_PREREQ
+
+  mvn clean package
+  mv target/shipping-1.0.jar shipping.jar
+
+
+  SYSTEMD
+}
