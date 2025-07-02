@@ -40,12 +40,12 @@ PYTHON() {
 
 MAVEN() {
   dnf install maven -y
-  cp shipping.service /etc/systemd/system/shipping.service
+  cp ${component}.service /etc/systemd/system/${component}.service
 
   APP_PREREQ
 
   mvn clean package
-  mv target/shipping-1.0.jar shipping.jar
+  mv target/${component}-1.0.jar ${component}.jar
 
 
   SYSTEMD
