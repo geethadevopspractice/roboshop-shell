@@ -9,6 +9,6 @@
   MAVEN
 
   dnf install mysql -y
-for file in schema app-user app-user ; do
+for file in schema app-user master-data ; do
    mysql -h mysql-dev.gdevops65.shop -uroot -p$1 < /app/db/$file.sql
 done
